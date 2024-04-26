@@ -2,7 +2,7 @@ import streamlit as st
 
 if __name__ == '__main__':
     st.header('Streamlitのテストページ', divider='blue')
-    page = st.sidebar.selectbox('ページを選択', ['page1','page2','page3'], index=0)
+    page = st.sidebar.selectbox('ページを選択', ['page1','page2','page3','page4'], index=0)
 
     if page == 'page1':
         st.title('ページ1')
@@ -10,6 +10,8 @@ if __name__ == '__main__':
     elif page == 'page2':
         st.title('ページ2')
         st.write('Streamlitのテストページ2です。')
-    else:
-        st.title('ページ3')
+    elif page == 'page3':
         st.write('Streamlitのテストページ3です。')
+    else:
+        st.title('ページ4')
+        st.write('Streamlitのテストページ4です。')
