@@ -3,9 +3,8 @@ from os import wait
 import numpy as np
 import pandas as pd
 import streamlit as st
-import datetime
-from time import sleep
-from time import time
+import datetime as dt
+import time
 
 
 @st.cache_data
@@ -48,14 +47,14 @@ if __name__ == '__main__':
         st.write('Values:', values)
 
         appointment = st.slider("Schedule your appointment:",
-                                value=(time(11, 30), time(12, 45)))
+                                value=(dt.time(11, 30), dt.time(12, 45)))
         st.write("You're scheduled for:", appointment)
 
     elif page == 'page3':
         st.write('Streamlitのテストページ3です。')
 
         st.write('Datetime slider')
-        start_time = st.slider("when do you start?", value=datetime(2020, 1, 1, 9, 30), format="YYYY/MM/DD - hh:mm")
+        start_time = st.slider("when do you start?", value=dt.datetime(2020, 1, 1, 9, 30), format="YYYY/MM/DD - hh:mm")
         st.write("Start time:", start_time)
 
     elif page == 'page4':
@@ -160,7 +159,7 @@ if __name__ == '__main__':
         my_bar = st.progress(0)
 
         for percent_complete in range(100):
-            sleep(0.05)
+            time.sleep(0.05)
             my_bar.progress(percent_complete + 1)
 
         st.balloons()
@@ -213,19 +212,19 @@ if __name__ == '__main__':
         st.title('st.cache')
 
         # キャッシュを使用する
-        a0 = time()
+        a0 = time.time()
         st.subheader('Using st.cache')
 
         st.write(load_data_a())
-        a1 = time()
+        a1 = time.time()
         st.info(a1 - a0)
 
         # キャッシュを使用しない
-        b0 = time()
+        b0 = time.time()
         st.subheader('Not using st.cache')
 
         st.write(load_data_b())
-        b1 = time()
+        b1 = time.time()
         st.info(b1 - b0)
 
     elif page == 'page11':
