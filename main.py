@@ -47,7 +47,7 @@ if __name__ == '__main__':
         st.write('Values:', values)
 
         appointment = st.slider("Schedule your appointment:",
-                                value=(dt.time(11, 30), dt.time(12, 45)))
+                                value=(dt.time(9, 00), dt.time(18, 00)))
         st.write("You're scheduled for:", appointment)
 
     elif page == 'page3':
